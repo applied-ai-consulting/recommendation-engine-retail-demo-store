@@ -1,6 +1,6 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
-Transform: 'AWS::LanguageExtensions'
+Transform: "AWS::LanguageExtensions"
 
 # Do NOT remove the RETAIL_DS prefix in the template description below!
 Description: >
@@ -204,19 +204,19 @@ Parameters:
     Description: >
       Optional path in the Deployment Resources Staging bucket where the deployment resources are stored (e.g. path/path2/).
       Leave blank if resources are at the root of the Staging Resource Bucket. If specified, MUST end with '/'.
-    Default: ''
+    Default: ""
 
   ResourceBucketImages:
     Type: String
     Description: >
       (Leave empty in most cases) only specify if your product images are stored in a different bucket
-    Default: ''
+    Default: ""
 
   ResourceBucketImagesPrefix:
     Type: String
     Description: >
       (Leave empty in most cases) Images bucket prefix only specify if your product images are stored in a different bucket
-    Default: ''
+    Default: ""
 
   CreateOpenSearchServiceLinkedRole:
     Type: String
@@ -244,7 +244,7 @@ Parameters:
   GitHubRepo:
     Type: String
     Description: Name of Retail Demo Store GitHub repository. Will almost always be 'retail-demo-store'.
-    Default: retail-demo-store
+    Default: recommendation-engine-retail-demo-store
 
   GitHubBranch:
     Type: String
@@ -254,7 +254,7 @@ Parameters:
   GitHubUser:
     Type: String
     Description: If you are linking and deploying from a fork of the Retail Demo Store repository, enter your GitHub username. Otherwise, use the default of 'aws-samples' to link to the upstream repository.
-    Default: aws-samples
+    Default: applied-ai-consulting
 
   GitHubToken:
     Type: String
@@ -262,7 +262,7 @@ Parameters:
       If you are linking and deploying from a private fork of the Retail Demo Store repository in your GitHub account, a GitHub Personal
       Access Token is required. Otherwise, leave blank. Be sure that your token has the "repo", "repo:status", and "admin:repo_hook" permission scopes.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   PreIndexOpenSearch:
     Type: String
@@ -302,7 +302,7 @@ Parameters:
     Description: >
       Email address to use as Reply-To when sending emails from Pinpoint. This parameter is required when 'Auto-Configure Pinpoint'
       is set to 'Yes'.
-    Default: ''
+    Default: ""
 
   PinpointEmailFromName:
     Type: String
@@ -327,19 +327,19 @@ Parameters:
     Description: >
       A dedicated long code (i.e. a phone number) obtained for Amazon Pinpoint to send and receive messages at. Be sure to enable two way SMS for this long code using Pinpoint. Follow steps 2 and 3 in the Messaging workshop(https://github.com/aws-samples/retail-demo-store/blob/master/workshop/4-Messaging/4.1-Pinpoint.ipynb)
       to get a long code. This parameter only applies when 'Auto-Configure Pinpoint' is set to 'Yes'. Enter the number along with the country code and without any spaces or brackets. For Example: enter "+1XXXXXXXXXX" for a long code based in the United States.
-    Default: ''
+    Default: ""
 
   AmplitudeApiKey:
     Type: String
     Description: Amplitude API key for integrated product analytics and A/B testing results (optional).
     NoEcho: true
-    Default: ''
+    Default: ""
 
   OptimizelySdkKey:
     Type: String
     Description: Optimizely SDK key for experimentation (optional).
     NoEcho: true
-    Default: ''
+    Default: ""
 
   DeployLocationServices:
     Type: String
@@ -363,21 +363,21 @@ Parameters:
       This demonstration store contains an example of signing Amazon Pay payloads for integration with an Amazon Pay sandbox.
       This parameter is the Public Key ID for the Amazon Pay sandbox account being used.
       For more information see "Amazon Pay Integration" under the README file in the amazon-pay-signing subfolder in the repository.
-    Default: ''
+    Default: ""
 
   AmazonPayStoreId:
     Type: String
     Description: >
       The Store ID of the Amazon Pay sandbox account being used.
       For more information see "Amazon Pay Integration" under the README file in the amazon-pay-signing subfolder in the repository.
-    Default: ''
+    Default: ""
 
   AmazonPayMerchantId:
     Type: String
     Description: >
       Merchant ID of the Amazon Pay sandbox account being used.
       For more information see "Amazon Pay Integration" under the README file in the amazon-pay-signing subfolder in the repository.
-    Default: ''
+    Default: ""
 
   AmazonPayPrivateKey:
     Type: String
@@ -386,7 +386,7 @@ Parameters:
       You will need to copy the whole contents of the .pem file into this parameter.
       For more information see "Amazon Pay Integration" under the README file in the amazon-pay-signing subfolder in the repository.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   AlexaSkillId:
     Type: String
@@ -395,14 +395,14 @@ Parameters:
       of this CloudFormation stack. The back-end Lambda supports the C-Store demo allowing hands-free location
       based searching with Location Service (if enabled), integration with the Retail Demo Store back-end, online recommendations,
       and checkout.
-    Default: ''
+    Default: ""
 
   AlexaDefaultSandboxEmail:
     Type: String
     Description: >
       Fallback email address to receive order confirmation emails.  This will be used until the steps are followed to enable Alexa to authenticate with Cognito,
       after which it will be able to retrieve the user's details.
-    Default: ''
+    Default: ""
 
   IncludeSegmentDependencies:
     Type: String
@@ -418,84 +418,84 @@ Parameters:
     Description: >
       Segment write key for real-time data collection (optional). Be sure the Segment resources are deployed (above) if you specify a write key.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   IncludemParticleDependencies:
     Type: String
     Description: >
       Whether to deploy the resources required for the mParticle workshops.
     AllowedValues:
-      - 'Yes'
-      - 'No'
-    Default: 'No'
+      - "Yes"
+      - "No"
+    Default: "No"
 
   mParticleOrgId:
     Type: String
     Description: >
       mParticle organization ID from your workspace.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   mParticleApiKey:
     Type: String
     Description: >
       mParticle event API Key for your mParticle tenant.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   mParticleSecretKey:
     Type: String
     Description: >
       mParticle event API secret key coupled with your API key.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   mParticleS2SApiKey:
     Type: String
     Description: >
       mParticle server to server API Key for your mParticle tenant.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   mParticleS2SSecretKey:
     Type: String
     Description: >
       mParticle server to server secret key coupled with your API key.
     NoEcho: true
-    Default: ''
+    Default: ""
 
   GoogleAnalyticsMeasurementId:
     Type: String
     Description: >
       Google Analytics Measurement Identifier (optional). If specified, the Google Analytics integration in the web application is activated and
       events are sent to the data stream associated with the Measurement ID.
-    Default: ''
+    Default: ""
 
   ACMCertificateArn:
     Type: String
     Description: ACM Certificate ARN for CloudFront WebUICDN (Optional, only needed for custom domain in CloudFront)
-    Default: ''
+    Default: ""
 
   CloudfrontCustomDomain:
     Type: String
-    Description : OPTIONAL only enter if you plan to use a custom domain named (linked to ACMCertificateArn)
-    Default: ''
+    Description: OPTIONAL only enter if you plan to use a custom domain named (linked to ACMCertificateArn)
+    Default: ""
 
   FenixZipDetectUrl:
     Type: String
     Description: Fenix Commerce Zipcode Detect URL
-    Default: 'https://ipapi.co/json?key=cKGC3jQbSIoXYmI2KtXObugsKfosD9Yr0HnkHhPUu1SM2wQhE0'
+    Default: "https://ipapi.co/json?key=cKGC3jQbSIoXYmI2KtXObugsKfosD9Yr0HnkHhPUu1SM2wQhE0"
 
   FenixTenantId:
     Type: String
     Description: Fenix Commerce Demo Env TenantID
-    Default: 'ec6ea3439489426ba09cf6c906ead8d5'
+    Default: "ec6ea3439489426ba09cf6c906ead8d5"
     NoEcho: true
 
   FenixEddEndpoint:
     Type: String
     Description: Fenix Commerce Estimated Delivery Date Endpoint URL
-    Default: 'https://platform.api.fenixcommerce.com/awsretaildemostore/fenixdelest/api/v2/deliveryestimates'
+    Default: "https://platform.api.fenixcommerce.com/awsretaildemostore/fenixdelest/api/v2/deliveryestimates"
 
   FenixMonetaryValue:
     Type: String
@@ -506,52 +506,52 @@ Parameters:
     Type: String
     Description: Fenix Commerce Flag to enable display of Estimated Delivery Date (EDD) on PDP. OFF/FALSE by default
     AllowedValues:
-      - 'TRUE'
-      - 'FALSE'
-    Default: 'FALSE'
+      - "TRUE"
+      - "FALSE"
+    Default: "FALSE"
 
   FenixEnabledCart:
     Type: String
     Description: Fenix Commerce Flag to enable EDD on CART Page
     AllowedValues:
-      - 'TRUE'
-      - 'FALSE'
-    Default: 'FALSE'
+      - "TRUE"
+      - "FALSE"
+    Default: "FALSE"
 
   FenixEnabledCheckout:
     Type: String
     Description: Fenix Commerce Flag to enable EDD on checkout Page
     AllowedValues:
-      - 'TRUE'
-      - 'FALSE'
-    Default: 'FALSE'
+      - "TRUE"
+      - "FALSE"
+    Default: "FALSE"
 
   FenixXapiKey:
     Type: String
     Description: Fenix Commerce Demo Env x-api-key
-    Default: 'nr50Qdu7FM94n2X1GYuhA8cFzyvdYTJ5Qka4XMOd'
+    Default: "nr50Qdu7FM94n2X1GYuhA8cFzyvdYTJ5Qka4XMOd"
     NoEcho: true
 
   BedrockProductPersonalization:
     Type: String
     Description: Flag to enable product personalization in web-ui feature driven by Bedrock. Amazon Bedrock users need to request access to models before they are available for use. To demo Personalised Product Descriptions make sure to enable access to Anthropic's Claude v2 via the Amazon Bedrock Management Console. Check README Notes for more details.
     AllowedValues:
-      - 'Yes'
-      - 'No'
-    Default: 'No'
+      - "Yes"
+      - "No"
+    Default: "No"
 
   SourceImagesPackage:
     Type: String
-    Description : Full url to the images.tar.gz address (only change if you plan to upload custom pictures)
+    Description: Full url to the images.tar.gz address (only change if you plan to upload custom pictures)
     Default: https://code.retaildemostore.retail.aws.dev/images.tar.gz
 
   DeployRoomMakeoverDemo:
     Type: String
     Description: Flag to deploy the Room Makeover demo. Amazon Bedrock users need to request access to models before they are available for use. To demo the Room Makerover functionality make sure to enable access to Anthropic's Claude v3 & Titan Embeddings via the Amazon Bedrock Management Console. Check README Notes for more details.
     AllowedValues:
-      - 'Yes'
-      - 'No'
-    Default: 'No'
+      - "Yes"
+      - "No"
+    Default: "No"
 
   EnableSageMakerAutoScaling:
     Type: String
@@ -583,9 +583,8 @@ Parameters:
     Description: Name of the embedding index
     Default: embproducts
 
-
 Mappings:
-# Regions that support Amazon Bedrock and the required models of Room Maker demo: Claude 3 Haiku, Titan Multimodal Embeddings G1
+  # Regions that support Amazon Bedrock and the required models of Room Maker demo: Claude 3 Haiku, Titan Multimodal Embeddings G1
   BedrockRegionMap:
     us-east-1:
       SupportsRequiredModels: "Yes"
@@ -605,7 +604,7 @@ Conditions:
 
   DeploymParticleResources: !Equals
     - !Ref IncludemParticleDependencies
-    - 'Yes'
+    - "Yes"
 
   DeployLocationStack: !Equals
     - !Ref DeployLocationServices
@@ -625,8 +624,13 @@ Conditions:
     - !Equals [!Ref CloudfrontCustomDomain, ""]
 
   RegionSupportsRequiredBedrockModels: !Equals
-    - !FindInMap [BedrockRegionMap, !Ref 'AWS::Region', 'SupportsRequiredModels', DefaultValue: 'No']
-    - 'Yes'
+    - !FindInMap [
+        BedrockRegionMap,
+        !Ref "AWS::Region",
+        "SupportsRequiredModels",
+        DefaultValue: "No",
+      ]
+    - "Yes"
 
   DeployRoomMakeoverStack: !And
     - !Equals [!Ref DeployRoomMakeoverDemo, "Yes"]
@@ -710,7 +714,6 @@ Resources:
         LoggingBucketName: !GetAtt Base.Outputs.LoggingBucketName
         LambdaVpcSecurityGroup: !GetAtt Base.Outputs.PrivateVPCSecurityGroup
 
-
   # Services Resources
   ApiGateway:
     Type: AWS::CloudFormation::Stack
@@ -764,7 +767,12 @@ Resources:
         FenixEnabledCheckout: !Ref FenixEnabledCheckout
         FenixXapiKey: !Ref FenixXapiKey
         BedrockProductPersonalization: !Ref BedrockProductPersonalization
-        RoomImagesBucket: !If [DeployRoomMakeoverStack, !GetAtt RoomMakeover.Outputs.RoomImagesBucket, '']
+        RoomImagesBucket:
+          !If [
+            DeployRoomMakeoverStack,
+            !GetAtt RoomMakeover.Outputs.RoomImagesBucket,
+            "",
+          ]
         LocationResourceName:
           !If [
             DeployLocationStack,
@@ -852,8 +860,8 @@ Resources:
         WebURL:
           !If [
             ConditionCustomDomain,
-            !Sub 'https://${CloudfrontCustomDomain}' ,
-            !GetAtt Base.Outputs.WebUICDNURL
+            !Sub "https://${CloudfrontCustomDomain}",
+            !GetAtt Base.Outputs.WebUICDNURL,
           ]
         LambdaVpcSecurityGroup: !GetAtt Base.Outputs.PrivateVPCSecurityGroup
         LambdaVpcSubnets: !GetAtt Base.Outputs.Subnets
@@ -873,8 +881,8 @@ Resources:
         WebURL:
           !If [
             ConditionCustomDomain,
-            !Sub 'https://${CloudfrontCustomDomain}' ,
-            !GetAtt Base.Outputs.WebUICDNURL
+            !Sub "https://${CloudfrontCustomDomain}",
+            !GetAtt Base.Outputs.WebUICDNURL,
           ]
 
   Alexa:
@@ -950,7 +958,6 @@ Resources:
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
         LambdaVpcSecurityGroup: !GetAtt Base.Outputs.PrivateVPCSecurityGroup
         LambdaVpcSubnets: !GetAtt Base.Outputs.Subnets
-
 
   # mParticle Lambda Functions Kinesis and Roles
   mParticlePersonalize:
@@ -1059,7 +1066,12 @@ Outputs:
 
   AlexaSkillEndpointArn:
     Description: Arn of AWS Lambda function that can be a back-end
-    Value: !If [DeployAlexaEndpoint, !GetAtt Alexa.Outputs.AlexaSkillEndpointArn, "NotDeployed"]
+    Value:
+      !If [
+        DeployAlexaEndpoint,
+        !GetAtt Alexa.Outputs.AlexaSkillEndpointArn,
+        "NotDeployed",
+      ]
 
   ProductsServiceUrl:
     Description: Products load balancer URL.
@@ -1107,43 +1119,43 @@ Outputs:
   ExportEnvVarScript:
     Description: A script to export all required environment variable for running docker-compose locally, but connecting to Cloud resources. Replace the existing .env file with this output.
     Value: !Sub |
-        # Products service
-        DDB_TABLE_PRODUCTS=${Base.Outputs.ProductsTable}
-        DDB_TABLE_CATEGORIES=${Base.Outputs.CategoriesTable}
-        DDB_TABLE_CARTS=${Base.Outputs.CartsTable}
-        DDB_TABLE_ORDERS=${Base.Outputs.OrdersTable}
-        DDB_TABLE_PERSONALISED_PRODUCTS=${Base.Outputs.PersonalisedProductsTable}
-        IMAGE_ROOT_URL="${Base.Outputs.WebUICDNURL}/images/"
-        WEB_ROOT_URL="${Base.Outputs.WebUICDNURL}"
+      # Products service
+      DDB_TABLE_PRODUCTS=${Base.Outputs.ProductsTable}
+      DDB_TABLE_CATEGORIES=${Base.Outputs.CategoriesTable}
+      DDB_TABLE_CARTS=${Base.Outputs.CartsTable}
+      DDB_TABLE_ORDERS=${Base.Outputs.OrdersTable}
+      DDB_TABLE_PERSONALISED_PRODUCTS=${Base.Outputs.PersonalisedProductsTable}
+      IMAGE_ROOT_URL="${Base.Outputs.WebUICDNURL}/images/"
+      WEB_ROOT_URL="${Base.Outputs.WebUICDNURL}"
 
-        # Recommendations service
-        PRODUCT_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
-        OFFERS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
-        AWS_XRAY_DAEMON_ADDRESS=xray:2000
+      # Recommendations service
+      PRODUCT_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
+      OFFERS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
+      AWS_XRAY_DAEMON_ADDRESS=xray:2000
 
-        # Carts service
-        CARTS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
-        DDB_TABLE_CARTS=${Base.Outputs.CartsTable}
+      # Carts service
+      CARTS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
+      DDB_TABLE_CARTS=${Base.Outputs.CartsTable}
 
-        # Orders service
-        ORDERS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
-        DDB_TABLE_ORDERS=${Base.Outputs.OrdersTable}
+      # Orders service
+      ORDERS_SERVICE_HOST="${ApiGateway.Outputs.APIEndpoint}"
+      DDB_TABLE_ORDERS=${Base.Outputs.OrdersTable}
 
-        # Search service
-        OPENSEARCH_DOMAIN_SCHEME=https
-        OPENSEARCH_DOMAIN_HOST="${Base.Outputs.OpenSearchDomainEndpoint}"
-        OPENSEARCH_DOMAIN_PORT=9200
+      # Search service
+      OPENSEARCH_DOMAIN_SCHEME=https
+      OPENSEARCH_DOMAIN_HOST="${Base.Outputs.OpenSearchDomainEndpoint}"
+      OPENSEARCH_DOMAIN_PORT=9200
 
-        # Evidently
-        EVIDENTLY_PROJECT_NAME="${Base.Outputs.EvidentlyProjectName}"
+      # Evidently
+      EVIDENTLY_PROJECT_NAME="${Base.Outputs.EvidentlyProjectName}"
 
-        # Users service
-        AWS_REGION=${AWS::Region}
+      # Users service
+      AWS_REGION=${AWS::Region}
 
-        # Locations service
-        RESOURCE_BUCKET=${ResourceBucket}
-        AWS_DEFAULT_REGION=${AWS::Region}
+      # Locations service
+      RESOURCE_BUCKET=${ResourceBucket}
+      AWS_DEFAULT_REGION=${AWS::Region}
 
-        # Videos service
-        PARAMETER_IVS_VIDEO_CHANNEL_MAP=${Base.Outputs.ParameterIVSVideoChannelMap}
-        USE_DEFAULT_IVS_STREAMS=true
+      # Videos service
+      PARAMETER_IVS_VIDEO_CHANNEL_MAP=${Base.Outputs.ParameterIVSVideoChannelMap}
+      USE_DEFAULT_IVS_STREAMS=true
