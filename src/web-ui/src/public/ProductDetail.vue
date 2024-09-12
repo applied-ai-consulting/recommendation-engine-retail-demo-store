@@ -133,7 +133,7 @@ export default {
       quantity: 1,
       feature: EXPERIMENT_FEATURE,
       relatedProducts: null,
-      relatedProductsSectionTitle: "Compare similar items",
+      relatedProductsSectionTitle: "Recommended Items",
       demoGuideBadgeArticle: null,
       experiment: null,
       fenixcurrentvariant: {},

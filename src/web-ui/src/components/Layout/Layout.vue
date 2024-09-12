@@ -15,7 +15,7 @@
 
     <slot v-if="!isLoading"></slot>
 
-    <TextAlerts v-if="showTextAlerts" class="mt-5"></TextAlerts>
+    <!-- <TextAlerts v-if="showTextAlerts" class="mt-5"></TextAlerts> -->
 
     <Footer v-if="showFooter" class="my-4 container"></Footer>
 
@@ -23,7 +23,7 @@
 
     <ConfirmationModal></ConfirmationModal>
 
-    <DemoGuideButton v-if="showDemoGuide" class="demo-guide-button"></DemoGuideButton>
+    <!-- <DemoGuideButton v-if="showDemoGuide" class="demo-guide-button"></DemoGuideButton> -->
   </div>
 </template>
 
@@ -58,7 +58,7 @@ export default {
     },
     showTextAlerts: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     showFooter: {
       type: Boolean,
