@@ -1,3 +1,28 @@
+# Applied AI Specific Notes
+> [!IMPORTANT]
+> Before proceeding with deployment in AAIC Account, please refrence this section for the configs and value changes to be aware of.
+
+### GitHub Token
+Before proceeding, since we have a forked deployment for our custom use case, you will need GitHub access token for the cloudformation config, which you can get from @Nikhil-shinde-01.
+
+### S3 Stagging Bucket
+All of the resources are deployed using cloudformation with template files hosted on S3.
+Follow the steps mentioned in this section [Create a S3 Staging Bucket](./docs/Deployment/getting-started.md#step-2--create-a-s3-staging-bucket)
+
+### Configure S3 on your local
+Using any of your prefered method configure AWS CLI for the project, once this is done move to next step
+
+### Upload Files to S3 Stagging Bucket
+Once the AWS CLI is configured follow the steps in this section [Step 3: Staging for Deployment](./docs/Deployment/getting-started.md#step-3--staging-for-deployment)
+
+### CloudFormation Deployment
+There are two methods you can use to initiate the deployment
+1. Use the link provided at the end of the above step
+2. Manually configure cloudformation
+
+> [!CAUTION]
+> Make sure to provide the GitHub Access Token in the AWS Console CloudFormation configuration form under Deployment section.
+> Don't use long stack names, as it has been observed to be problematic, use max 15 characters.
 
 # Retail Demo Store
 
