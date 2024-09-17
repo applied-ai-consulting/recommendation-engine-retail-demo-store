@@ -91,7 +91,7 @@
           Also note that there are additional limits imposed when your account is
           in the Pinpoint "sandbox".
         </p>
-        <h2 class="feature-subheading">Enable SMS sending.</h2>
+        <!-- <h2 class="feature-subheading">Enable SMS sending.</h2>
         <p>
           Ensure any phone number in the Pinpoint database
           to which you intend to send promotional messages (the "purchase" journey
@@ -101,7 +101,7 @@
           <a href="https://github.com/aws-samples/retail-demo-store/blob/master/workshop/4-Messaging/4.1-Pinpoint.ipynb">
             Pinpoint messaging workshop.</a>
           In brief, you need to (in the USA):
-        </p>
+        </p> -->
         <ol>
           <li>Subscribe to a long-code that supports SMS through the Pinpoint UI so that Pinpoint has a number
             to send messages from (this is a requirement in the USA to send messages).

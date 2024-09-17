@@ -97,7 +97,7 @@ export default {
         .catch((error) => {
           if (error.response) {
             if (error.response.status == 404) {
-              comp.searchError = 'Search index not found. Please complete the search workshop.'
+              comp.searchError = 'Search is currently offline.'
             } else {
               console.log(error)
               comp.searchError = `Unexpected error (${error.response.status}) encountered when performing search.`;

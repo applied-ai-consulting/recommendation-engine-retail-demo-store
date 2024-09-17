@@ -86,7 +86,7 @@
           </div>
 
           <Quote class="apn-quote">
-            <template #quote>
+            <!-- <template #quote>
               <p>
                 This post will present an architecture that combines Amazon Personalize and Amplitude’s product
                 intelligence platform to track user behavior in real time.
@@ -96,7 +96,7 @@
                 which includes a self-guided workshop created by Amplitude to help you become familiar with its
                 capabilities...
               </p>
-            </template>
+            </template> -->
             <template #default
               ><a
                 href="https://aws.amazon.com/blogs/apn/measuring-the-effectiveness-of-personalization-with-amplitude-and-amazon-personalize/"

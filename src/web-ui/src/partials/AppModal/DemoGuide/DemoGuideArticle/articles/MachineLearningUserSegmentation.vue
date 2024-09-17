@@ -43,11 +43,11 @@
       You can read more about User Segmentation on the <a href="https://aws.amazon.com/blogs/machine-learning/improve-the-return-on-your-marketing-investments-with-intelligent-user-segmentation-in-amazon-personalize/">Amazon Personalize blog</a>.
     </p>
 
-    <h2 class="feature-subheading">User Segmentation Workshop</h2>
+    <!-- <h2 class="feature-subheading">User Segmentation Workshop</h2>
     <p>
       This project comes with a step-by-step workshop that will guide you through how to build an item attribute affinity custom solution and
       run a batch segmentation job that will generate user segments based on affinity for product categories.
-    </p>
+    </p> -->
   </ArticleLayout>
 </template>
 
