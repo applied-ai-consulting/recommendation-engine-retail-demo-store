@@ -3,7 +3,7 @@
 > Before proceeding with deployment in AAIC Account, please refrence this section for the configs and value changes to be aware of.
 
 ### GitHub Token
-Before proceeding, since we have a forked deployment for our custom use case, you will need GitHub access token for the cloudformation config, which you can get from @Nikhil-shinde-01.
+Before proceeding, since we have a forked deployment for our custom use case, you will need a GitHub Access token for the cloudformation config, which you can get from @Nikhil-shinde-01 .
 
 ### S3 Stagging Bucket
 All of the resources are deployed using cloudformation with template files hosted on S3.
